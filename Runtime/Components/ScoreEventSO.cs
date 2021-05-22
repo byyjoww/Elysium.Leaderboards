@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Elysium.Leaderboards
 {
-    [CreateAssetMenu(fileName = "ScoreEventSO", menuName = "Scriptable Objects/Event/Score", order = 1)]
+    [CreateAssetMenu(fileName = "ScoreEventSO", menuName = "Scriptable Objects/Scriptable Events/Score", order = 1)]
     public class ScoreEventSO : GenericEventSO<string, long>
     {        
 
