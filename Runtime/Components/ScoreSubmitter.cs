@@ -9,8 +9,8 @@ namespace Elysium.Leaderboards
 {
     public class ScoreSubmitter : MonoBehaviour
     {
-        [SerializeField] private LongEventSO doSubmitScore = default;
-        [SerializeField] private EventSO onFetchScore = default;
+        [SerializeField] private ScoreEventSO doSubmitScore = default;
+        [SerializeField] private EventSO onSubmitScore = default;
 
         public string PlayerName => null;
         public bool PlayerHasName => PlayerName != null && PlayerName.Length > 0;
@@ -18,9 +18,8 @@ namespace Elysium.Leaderboards
         private void OnEnable() => doSubmitScore.OnRaise += SubmitScore;
         private void OnDisable() => doSubmitScore.OnRaise -= SubmitScore;
 
-        private void SubmitScore(long _score)
+        private void SubmitScore(string leaderboard, long _score)
         {
-            string leaderboard = Leaderboards.LeaderboardID;
             Debug.Log($"Submitting leaderboard score of {_score} to leaderboard {leaderboard}.");
 
             if (!PlayerHasName)
