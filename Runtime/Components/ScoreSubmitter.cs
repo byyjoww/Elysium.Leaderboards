@@ -21,7 +21,7 @@ namespace Elysium.Leaderboards
                     return null;
                 }
                 
-                return PlayerPrefs.GetKey("save.name", "");
+                return PlayerPrefs.GetString("save.name", "");
             }
         }
         
