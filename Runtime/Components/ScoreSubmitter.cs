@@ -16,7 +16,7 @@ namespace Elysium.Leaderboards
         {
             get
             {
-                if (!PlayerPrefs.HasKey("save.name")
+                if (!PlayerPrefs.HasKey("save.name"))
                 {
                     return null;
                 }
