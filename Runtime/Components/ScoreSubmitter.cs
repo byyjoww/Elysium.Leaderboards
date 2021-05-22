@@ -12,7 +12,19 @@ namespace Elysium.Leaderboards
         [SerializeField] private ScoreEventSO doSubmitScore = default;
         [SerializeField] private EventSO onSubmitScore = default;
 
-        public string PlayerName => null;
+        public string PlayerName 
+        {
+            get
+            {
+                if (!PlayerPrefs.HasKey("save.name")
+                {
+                    return null;
+                }
+                
+                return PlayerPrefs.GetKey("save.name", "");
+            }
+        }
+        
         public bool PlayerHasName => PlayerName != null && PlayerName.Length > 0;
 
         private void OnEnable() => doSubmitScore.OnRaise += SubmitScore;
