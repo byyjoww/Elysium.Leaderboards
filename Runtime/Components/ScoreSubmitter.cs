@@ -31,7 +31,7 @@ namespace Elysium.Leaderboards
             void PostScoreCallback(bool _success) 
             {
                 if (!_success) { return; }
-                onFetchScore.Raise();
+                onSubmitScore.Raise();
             };
 
             _ = Leaderboards.PostPlayerScore(leaderboard, PlayerName, _score, PostScoreCallback);
